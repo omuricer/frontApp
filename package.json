@@ -3,20 +3,38 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "webpack --colors --config ./webpack.config.dev.js",
-    "build:prod": "webpack --config ./webpack.config.prod.js",
-    "start": "webpack-dev-server --mode=development"
-  },
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "build": "webpack --colors",
+    "build:prod": "webpack --config ./webpack.config.prod.js",
+    "start": "webpack-dev-server",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.13",
     "@types/react": "^16.7.22",
     "@types/react-dom": "^16.0.11",
+    "jest": "^24.0.0",
+    "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",
     "typescript": "^3.3.1",
     "webpack": "^4.29.0",

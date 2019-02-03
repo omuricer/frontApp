@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst item_1 = __webpack_require__(/*! ./item */ \"./src/item.ts\");\nvar elem = document.getElementById('output');\nvar aBook = new item_1.Item('今日がはじめてのTypeScript', 1980);\naBook.say(elem);\n\n\n//# sourceURL=webpack:///./src/app.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar item_1 = __webpack_require__(/*! ./item */ \"./src/item.ts\");\nvar elem = document.getElementById('output');\nvar aBook = new item_1.Item('今日がはじめてのTypeScript', 1980);\naBook.say(elem);\n\n\n//# sourceURL=webpack:///./src/app.ts?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass Item {\n    constructor(name, price) {\n        this.name = name;\n        this.price = price;\n    }\n    say(elem) {\n        if (elem) { // 引数がnullでない場合\n            elem.innerHTML = '書名：' + this.name + '  価格: ' + this.price + '円';\n        }\n    }\n}\nexports.Item = Item;\n\n\n//# sourceURL=webpack:///./src/item.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Item = /** @class */ (function () {\n    function Item(name, price) {\n        this.name = name;\n        this.price = price;\n    }\n    Item.prototype.say = function (elem) {\n        if (elem) { // 引数がnullでない場合\n            elem.innerHTML = '書名：' + this.name + '  価格: ' + this.price + '円';\n        }\n    };\n    return Item;\n}());\nexports.Item = Item;\n\n\n//# sourceURL=webpack:///./src/item.ts?");
 
 /***/ })
 
