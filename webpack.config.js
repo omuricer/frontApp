@@ -6,7 +6,8 @@ module.exports = {
     // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
     // 下記はオブジェクトとして指定した例 
     entry: {
-        bundle: './src/app.ts',
+        // bundle: './src/app.ts',
+        bundle: './src/App.tsx',
     },
     output: {
         // モジュールバンドルを行った結果を出力する場所やファイル名の指定
@@ -32,8 +33,24 @@ module.exports = {
         rules: [
             {
                 // 拡張子が.tsで終わるファイルに対して、TypeScriptコンパイラを適用する
-                test:/\.ts$/,loader:'ts-loader',
-            }
+                test:[/\.ts$/, /\.tsx$/],
+                loader:'ts-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader', 
+                        options: {url: false}
+                    },
+                ],
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            },
         ]
     }
 }
