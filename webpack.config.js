@@ -24,6 +24,7 @@ module.exports = {
     devServer: {
         open: true,//ブラウザを自動で開く
         contentBase: path.join(__dirname, 'public'),// HTML等コンテンツのルートディレクトリ
+        publicPath: '/js/',
         watchContentBase: true,//コンテンツの変更監視をする
         port: 3000, // ポート番号
         //     historyApiFallback: true

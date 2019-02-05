@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -106,19 +107,27 @@ class Game extends React.Component<any, GameState> {
       );
     });
 
+    const Game = styled.div`
+      display: flex;
+      flex-direction: row;
+    `;
+    const GameInfo = styled.div`
+      margin-left: 20px;
+    `;
+
     return (
-      <div className="game">
+      <Game>
         <div className="game-board">
           <Board
             squares={current.squares}
             onClick={(i: number) => this.handleClick(i)}
           />
         </div>
-        <div className="game-info">
+        <GameInfo>
           <div>{status}</div>
           <ol>{moves}</ol>
-        </div>
-      </div>
+        </GameInfo>
+      </Game>
     );
   }
 }
