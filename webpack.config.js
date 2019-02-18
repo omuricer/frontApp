@@ -19,7 +19,7 @@ module.exports = {
     // 例えば「import Foo from './foo'」という記述に対して"foo.ts"という名前のファイルをモジュールとして探す
     // デフォルトは['.js', '.json']
     resolve: {
-        extensions:['.ts','.js']
+        extensions:['.js','.jsx','.ts','.tsx']
     },
     devServer: {
         open: true,//ブラウザを自動で開く

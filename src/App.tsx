@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import './index.css';
+import Button from 'react-bootstrap/Button';
 import * as serviceWorker from './serviceWorker';
 
 type SquareType = string | null;
@@ -102,7 +103,7 @@ class Game extends React.Component<any, GameState> {
         'Game start';
       return (
         <li key={move}>
-          <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+          <Button variant="primary" onClick={() => this.jumpTo(move)}>{desc}</Button>
         </li>
       );
     });
@@ -125,7 +126,7 @@ class Game extends React.Component<any, GameState> {
         </div>
         <GameInfo>
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <div>{moves}</div>
         </GameInfo>
       </Game>
     );

@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "module": "es2015",
+        // "module": "es2015",
+        "module": "commonjs",
         "jsx": "react",
         "strict": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "declaration": true,
+        "declarationMap": true
     }
   }
