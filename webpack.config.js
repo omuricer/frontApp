@@ -7,7 +7,7 @@ module.exports = {
     // 下記はオブジェクトとして指定した例 
     entry: {
         // bundle: './src/app.ts',
-        bundle: './src/App.tsx',
+        bundle: './src/index.tsx',
     },
     output: {
         // モジュールバンドルを行った結果を出力する場所やファイル名の指定
