@@ -1,6 +1,4 @@
-const initialState = {
-  fuga: 1
-}
+import { initialState } from './component/app';
 
 export default function reducer(state = initialState, action: any) {
   switch(action.type) {

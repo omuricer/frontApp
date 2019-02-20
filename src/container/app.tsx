@@ -1,18 +1,18 @@
-import React from 'react';
+import { Dispatch, Action } from 'redux';
 import { connect } from 'react-redux';
 
 import App from '../component/app';
-// import { increment } from '../action/app';
-import action from '../action/app';
+import { initialState } from '../component/app';
+import { increment } from '../action/app';
 
-function mapStateToProps(state: any) {
-  return state;
-}
+const mapStateToProps = (state: typeof initialState) => ({
+  hoge: 10,
+  fuga: state.fuga
+});
 
-function mapDispatchToProps(dispatch: any) {
-  return {
-    handleClick: () => { dispatch(action.increment()); }
-  }
-}
+const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
+  hoge: 10,
+  handleClick: () => dispatch(increment())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
