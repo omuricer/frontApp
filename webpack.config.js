@@ -6,8 +6,8 @@ module.exports = {
     // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
     // 下記はオブジェクトとして指定した例 
     entry: {
-        // bundle: './src/app.ts',
-        bundle: './src/index.tsx',
+        // bundle: './src/index.tsx',
+        bundle: './src/index.jsx',
     },
     output: {
         // モジュールバンドルを行った結果を出力する場所やファイル名の指定
@@ -36,6 +36,11 @@ module.exports = {
                 // 拡張子が.tsで終わるファイルに対して、TypeScriptコンパイラを適用する
                 test:[/\.ts$/, /\.tsx$/],
                 loader:'ts-loader',
+                exclude: /node_modules/
+            },
+            {
+                test:[/\.jsx$/],
+                loader:'babel-loader',
                 exclude: /node_modules/
             },
             {
