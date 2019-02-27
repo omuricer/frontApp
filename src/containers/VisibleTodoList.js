@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 import TodoList from '../components/TodoList';
-import { VisibilityFilters } from '../actions';
+import { visibilityFilters } from '../actions';
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
-    case VisibilityFilters.SHOW_ALL:
+    case visibilityFilters.SHOW_ALL:
       return todos;
-    case VisibilityFilters.SHOW_COMPLETED:
+    case visibilityFilters.SHOW_COMPLETED:
       return todos.filter(t => t.completed);
-    case VisibilityFilters.SHOW_ACTIVE:
+    case visibilityFilters.SHOW_ACTIVE:
       return todos.filter(t => !t.completed);
     default:
-      throw new Error('Unknown filter: ' + filter)
+      throw new Error('Unknown filter: ' + filter);
   };
 };
 
@@ -26,5 +26,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(TodoList);
